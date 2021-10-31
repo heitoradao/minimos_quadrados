@@ -25,7 +25,7 @@ SPonto *PreencheTabela(int *numeroPontos)
 
 double **PreencheMatrizCoeficientes(SPonto *tabelaPontos, int numeroPontos, int grauPolinomio)
 {
-	// Aloca memória para a matriz.
+    // Aloca memoria para a matriz.
 	double **matriz = new double*[grauPolinomio + 1];
 	for (int linha = 0; linha <= grauPolinomio; linha++)
 	{
