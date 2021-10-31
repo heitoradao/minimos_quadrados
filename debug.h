@@ -2,13 +2,15 @@
 #define H8OR_DEBUG 1
 
 #include <iostream>
-using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
 #include "mmq.h"
 
 #define NUMERO_PONTOS 5
 #define GRAU 1
 
-void PreencheTabelaPontos(SPonto *tabela)
+void debug_PreencheTabelaPontos(SPonto *tabela)
 {
 	tabela[0].x = 0;
 	tabela[0].y = 0;
@@ -22,20 +24,20 @@ void PreencheTabelaPontos(SPonto *tabela)
 	tabela[4].y = 4;
 }
 
-void MostraMatrizCoeficientes(double **coeficientes)
+void MostraMatrizCoeficientes(double **coeficientes, int grauPolinomio)
 {
-	for (int linha = 0; linha <= GRAU; linha++)
+	for (int linha = 0; linha <= grauPolinomio; linha++)
 	{
-		for (int coluna = 0; coluna <= GRAU; coluna++)
+		for (int coluna = 0; coluna <= grauPolinomio; coluna++)
 			cout << coeficientes[linha][coluna] << ' ';
 		cout << endl;
 	}
 	cout << endl;
 }
 
-void MostraTermosIndependentes(double *independentes)
+void MostraTermosIndependentes(double *independentes, int grauPolinomio)
 {
-	for (int linha = 0; linha <= GRAU; linha++)
+	for (int linha = 0; linha <= grauPolinomio; linha++)
 		cout << independentes[linha] << endl;
 	cout << endl;
 }
