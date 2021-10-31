@@ -7,8 +7,8 @@ using std::cin;
 
 struct SPonto
 {
-	double x;
-	double y;
+    double x;
+    double y;
 };
 
 typedef double(*ptrfuncao)(double);
