@@ -13,6 +13,16 @@
 				<Option includeInTargetAll="1" />
 			</Target>
 		</Build>
+		<Unit filename="GaussSeidel.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="GaussSeidel.h">
+			<Option compilerVar="CPP" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
 		<Unit filename="debug.h">
 			<Option compilerVar="CPP" />
 			<Option compile="0" />
