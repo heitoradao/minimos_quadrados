@@ -1,0 +1,638 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Minimos Quadrados: Referência do Arquivo GaussSeidel.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Minimos Quadrados
+   &#160;<span id="projectnumber">v0.5</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_gauss_seidel_8cpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência do Arquivo GaussSeidel.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_gauss_seidel_8h_source.html">GaussSeidel.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Gráfico de dependência de inclusões para GaussSeidel.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="_gauss_seidel_8cpp__incl.png" border="0" usemap="#_gauss_seidel_8cpp" alt=""/></div>
+<map name="_gauss_seidel_8cpp" id="_gauss_seidel_8cpp">
+<area shape="rect" title=" " alt="" coords="82,5,211,32"/>
+<area shape="rect" href="_gauss_seidel_8h.html" title=" " alt="" coords="89,80,204,107"/>
+<area shape="rect" title=" " alt="" coords="5,155,85,181"/>
+<area shape="rect" title=" " alt="" coords="109,155,184,181"/>
+<area shape="rect" title=" " alt="" coords="209,155,277,181"/>
+</map>
+</div>
+</div>
+<p><a href="_gauss_seidel_8cpp_source.html">Vá para o código-fonte desse arquivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:af9003f5e432f454d7544da4193242a75"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_gauss_seidel_8cpp.html#af9003f5e432f454d7544da4193242a75">CriterioSassenfeld</a> (double **&amp;matriz, const int &amp;ordem)</td></tr>
+<tr class="separator:af9003f5e432f454d7544da4193242a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8beee4cc07326cc41806095b63e86afc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_gauss_seidel_8cpp.html#a8beee4cc07326cc41806095b63e86afc">CriterioZeros</a> (double **&amp;coeficientes, const int ordem, double *&amp;independentes)</td></tr>
+<tr class="separator:a8beee4cc07326cc41806095b63e86afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c050a2176e901db0af953a569e396f6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_gauss_seidel_8cpp.html#a7c050a2176e901db0af953a569e396f6">Max</a> (const double *vetor, const int &amp;ordem)</td></tr>
+<tr class="separator:a7c050a2176e901db0af953a569e396f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac45f78f111b731ffcbe9d52c0290adfa"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_gauss_seidel_8cpp.html#ac45f78f111b731ffcbe9d52c0290adfa">Erro</a> (double *incognitas, double *incognitasAnterior, const int &amp;ordem)</td></tr>
+<tr class="separator:ac45f78f111b731ffcbe9d52c0290adfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9da430d9a6bc1f92098ef3b99efe445"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_gauss_seidel_8cpp.html#ac9da430d9a6bc1f92098ef3b99efe445">CopiaVetor</a> (double *vetor1, double *vetor2, const int &amp;ordem)</td></tr>
+<tr class="separator:ac9da430d9a6bc1f92098ef3b99efe445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ddd2a9fbc49517a45ffa895add3e02f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_gauss_seidel_8cpp.html#a1ddd2a9fbc49517a45ffa895add3e02f">GaussSeidel</a> (double **coeficientes, int ordem, double *incognitas, double *independente, const int numIteracoesMaximas=10, const double erroPermitido=0.0001)</td></tr>
+<tr class="separator:a1ddd2a9fbc49517a45ffa895add3e02f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71a2dcfa35b8d3accda054f82dc42e7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_gauss_seidel_8cpp.html#a71a2dcfa35b8d3accda054f82dc42e7c">MostraIncognitas</a> (double *vetorIncognitas, const int &amp;ordem)</td></tr>
+<tr class="separator:a71a2dcfa35b8d3accda054f82dc42e7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12cdcc862cf42919b52d80db2dc70372"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_gauss_seidel_8cpp.html#a12cdcc862cf42919b52d80db2dc70372">PreencheVetorCoeficientes</a> (double **&amp;coeficientes, const int &amp;ordem)</td></tr>
+<tr class="separator:a12cdcc862cf42919b52d80db2dc70372"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef75200522bd38b83237d4aa491ff0f9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_gauss_seidel_8cpp.html#aef75200522bd38b83237d4aa491ff0f9">DimensionaSistemaLinear</a> ()</td></tr>
+<tr class="separator:aef75200522bd38b83237d4aa491ff0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2278adfe311788bcb679d71b69bb77ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_gauss_seidel_8cpp.html#a2278adfe311788bcb679d71b69bb77ca">PreencheIndependentes</a> (double *&amp;vetorIndependente, const int &amp;ordem)</td></tr>
+<tr class="separator:a2278adfe311788bcb679d71b69bb77ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1646134ea9cb652b47621f5b3b98e91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_gauss_seidel_8cpp.html#af1646134ea9cb652b47621f5b3b98e91">InicializaZeros</a> (double *&amp;vetor, const int &amp;tamanho)</td></tr>
+<tr class="separator:af1646134ea9cb652b47621f5b3b98e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Funções</h2>
+<a id="ac9da430d9a6bc1f92098ef3b99efe445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9da430d9a6bc1f92098ef3b99efe445">&#9670;&nbsp;</a></span>CopiaVetor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CopiaVetor </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>vetor1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>vetor2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>ordem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Copia os elementos do vetor 1 no vetor 2. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">vetor1</td><td>O vetor fonte. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">vetor2</td><td>O vetor destino. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ordem</td><td>o tamanho dos vetores. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="_gauss_seidel_8cpp_source.html#l00105">105</a> do arquivo <a class="el" href="_gauss_seidel_8cpp_source.html">GaussSeidel.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af9003f5e432f454d7544da4193242a75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9003f5e432f454d7544da4193242a75">&#9670;&nbsp;</a></span>CriterioSassenfeld()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CriterioSassenfeld </td>
+          <td>(</td>
+          <td class="paramtype">double **&amp;&#160;</td>
+          <td class="paramname"><em>matriz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>ordem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Essa função analiza os critérios que estabelecem condições suficientes para a convergência do sistema, usando o critério de Sassenfeld. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">matriz</td><td>Matriz dos coeficientes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ordem</td><td>A ordem da matriz. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores Retornados</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">bool</td><td>Retorna true se o sistema convergir de certeza. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="_gauss_seidel_8cpp_source.html#l00013">13</a> do arquivo <a class="el" href="_gauss_seidel_8cpp_source.html">GaussSeidel.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8beee4cc07326cc41806095b63e86afc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8beee4cc07326cc41806095b63e86afc">&#9670;&nbsp;</a></span>CriterioZeros()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CriterioZeros </td>
+          <td>(</td>
+          <td class="paramtype">double **&amp;&#160;</td>
+          <td class="paramname"><em>coeficientes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>ordem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&amp;&#160;</td>
+          <td class="paramname"><em>independentes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Esta função procura se tem zeros na diagonal principal e troca as linhas se existir. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">coeficientes</td><td>A matriz que contém os coeficientes. param[in] ordem A ordem da Matriz. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">independentes</td><td>O vetor dos termos independentes. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores Retornados</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>Retorna zero se não tiver nenhum zero na diagonal principal e -1 em caso contrário. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="_gauss_seidel_8cpp_source.html#l00038">38</a> do arquivo <a class="el" href="_gauss_seidel_8cpp_source.html">GaussSeidel.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aef75200522bd38b83237d4aa491ff0f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef75200522bd38b83237d4aa491ff0f9">&#9670;&nbsp;</a></span>DimensionaSistemaLinear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DimensionaSistemaLinear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Esta função define o tamanho das matrizes e dos vetores, de acordo com dados fornecidos pelo usuário. </p><dl class="retval"><dt>Valores Retornados</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td>Retorna o tamanho (ordem) da matriz dos coeficientes, que também será o tamanho dos vetores. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="_gauss_seidel_8cpp_source.html#l00186">186</a> do arquivo <a class="el" href="_gauss_seidel_8cpp_source.html">GaussSeidel.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac45f78f111b731ffcbe9d52c0290adfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac45f78f111b731ffcbe9d52c0290adfa">&#9670;&nbsp;</a></span>Erro()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Erro </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>incognitas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>incognitasAnterior</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>ordem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Essa função retorna a variancia das incognitas. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">incognitas</td><td>o vetor das respostas. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">incognitasAnterior</td><td>O vetor das respostas da iteração anterior. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ordem</td><td>O tamanho do vetor. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores Retornados</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">double</td><td>Retorna a variância. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="_gauss_seidel_8cpp_source.html#l00086">86</a> do arquivo <a class="el" href="_gauss_seidel_8cpp_source.html">GaussSeidel.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1ddd2a9fbc49517a45ffa895add3e02f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ddd2a9fbc49517a45ffa895add3e02f">&#9670;&nbsp;</a></span>GaussSeidel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GaussSeidel </td>
+          <td>(</td>
+          <td class="paramtype">double **&#160;</td>
+          <td class="paramname"><em>coeficientes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ordem</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>incognitas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>independente</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>numIteracoesMaximas</em> = <code>10</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>erroPermitido</em> = <code>0.0001</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Essa função modifica o vetor de incognitas, preenchendo com os valores aproximados da sua solução real. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">coeficientes</td><td>A matriz dos coeficientes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ordem</td><td>A ordem da matriz. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">incognitas</td><td>O vetor que contém os resultados. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname"></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="_gauss_seidel_8cpp_source.html#l00122">122</a> do arquivo <a class="el" href="_gauss_seidel_8cpp_source.html">GaussSeidel.cpp</a>.</p>
+
+</div>
+</div>
+<a id="af1646134ea9cb652b47621f5b3b98e91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1646134ea9cb652b47621f5b3b98e91">&#9670;&nbsp;</a></span>InicializaZeros()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InicializaZeros </td>
+          <td>(</td>
+          <td class="paramtype">double *&amp;&#160;</td>
+          <td class="paramname"><em>vetor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>tamanho</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Essa função inicializa um vetor com zeros. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">vetor</td><td>O vetor que é pra ser inicializado. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tamanho</td><td>O tamanho do vetor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="_gauss_seidel_8cpp_source.html#l00217">217</a> do arquivo <a class="el" href="_gauss_seidel_8cpp_source.html">GaussSeidel.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7c050a2176e901db0af953a569e396f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c050a2176e901db0af953a569e396f6">&#9670;&nbsp;</a></span>Max()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Max </td>
+          <td>(</td>
+          <td class="paramtype">const double *&#160;</td>
+          <td class="paramname"><em>vetor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>ordem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Esta função procura o maior valor de um vetor. </p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Obsoleto(a):</a></b></dt><dd>Usar o algoritmo std::max,da biblioteca padrão </dd></dl>
+
+<p class="definition">Definição na linha <a class="el" href="_gauss_seidel_8cpp_source.html#l00067">67</a> do arquivo <a class="el" href="_gauss_seidel_8cpp_source.html">GaussSeidel.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a71a2dcfa35b8d3accda054f82dc42e7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71a2dcfa35b8d3accda054f82dc42e7c">&#9670;&nbsp;</a></span>MostraIncognitas()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MostraIncognitas </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>vetorIncognitas</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>ordem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Esta função mostra na tela o conteúdo do vetor das incognitas. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">vetorIncognitas</td><td>Esse vetor armazena as incognitas, ou seja, os resultados finais. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ordem</td><td>O tamanho do vetor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="_gauss_seidel_8cpp_source.html#l00153">153</a> do arquivo <a class="el" href="_gauss_seidel_8cpp_source.html">GaussSeidel.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2278adfe311788bcb679d71b69bb77ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2278adfe311788bcb679d71b69bb77ca">&#9670;&nbsp;</a></span>PreencheIndependentes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PreencheIndependentes </td>
+          <td>(</td>
+          <td class="paramtype">double *&amp;&#160;</td>
+          <td class="paramname"><em>vetorIndependente</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>ordem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Esta função preenche o vetor dos termos independentes com dados fornecidos pelo usuário. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">vetorIndependente</td><td>O vetor que contém os termos independentes, ou seja, as constantes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ordem</td><td>O tamanho do vetor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="_gauss_seidel_8cpp_source.html#l00201">201</a> do arquivo <a class="el" href="_gauss_seidel_8cpp_source.html">GaussSeidel.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a12cdcc862cf42919b52d80db2dc70372"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12cdcc862cf42919b52d80db2dc70372">&#9670;&nbsp;</a></span>PreencheVetorCoeficientes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PreencheVetorCoeficientes </td>
+          <td>(</td>
+          <td class="paramtype">double **&amp;&#160;</td>
+          <td class="paramname"><em>coeficientes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>ordem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Esta função preenche a matriz dos coeficientes com dados fornecidos pelo usuário. </p><dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">coeficientes</td><td>Essa é a matriz que armazena os coeficientes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ordem</td><td>A ordem da matriz. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definição na linha <a class="el" href="_gauss_seidel_8cpp_source.html#l00167">167</a> do arquivo <a class="el" href="_gauss_seidel_8cpp_source.html">GaussSeidel.cpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="_gauss_seidel_8cpp.html">GaussSeidel.cpp</a></li>
+    <li class="footer">Gerado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

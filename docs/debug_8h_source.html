@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Minimos Quadrados: Código-Fonte de debug.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Minimos Quadrados
+   &#160;<span id="projectnumber">v0.5</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('debug_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">debug.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="debug_8h.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef H8OR_DEBUG</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define H8OR_DEBUG 1</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> std::cin;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using</span> std::cout;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">using</span> std::endl;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mmq_8h.html">mmq.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="debug_8h.html#ad568295cc72c2256eb33ce38d06b9503">   10</a></span>&#160;<span class="preprocessor">#define NUMERO_PONTOS 5</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="debug_8h.html#ad690a2934b16cbe8ecf0195e86c805e7">   11</a></span>&#160;<span class="preprocessor">#define GRAU 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="debug_8h.html#a0f5016d14d06d3d8e01343009687867f">   13</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="debug_8h.html#a0f5016d14d06d3d8e01343009687867f">debug_PreencheTabelaPontos</a>(<a class="code" href="struct_s_ponto.html">SPonto</a> *tabela)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    tabela[0].<a class="code" href="struct_s_ponto.html#a1d46e1ca239ec18b158529d32a95aca8">x</a> = 0;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    tabela[0].<a class="code" href="struct_s_ponto.html#a4b2f1aa1174234face1590568576b8fc">y</a> = 0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    tabela[1].<a class="code" href="struct_s_ponto.html#a1d46e1ca239ec18b158529d32a95aca8">x</a> = 1;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    tabela[1].<a class="code" href="struct_s_ponto.html#a4b2f1aa1174234face1590568576b8fc">y</a> = 1;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    tabela[2].<a class="code" href="struct_s_ponto.html#a1d46e1ca239ec18b158529d32a95aca8">x</a> = 2;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    tabela[2].<a class="code" href="struct_s_ponto.html#a4b2f1aa1174234face1590568576b8fc">y</a> = 1;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    tabela[3].<a class="code" href="struct_s_ponto.html#a1d46e1ca239ec18b158529d32a95aca8">x</a> = 3;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    tabela[3].<a class="code" href="struct_s_ponto.html#a4b2f1aa1174234face1590568576b8fc">y</a> = 4;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    tabela[4].<a class="code" href="struct_s_ponto.html#a1d46e1ca239ec18b158529d32a95aca8">x</a> = 4;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    tabela[4].<a class="code" href="struct_s_ponto.html#a4b2f1aa1174234face1590568576b8fc">y</a> = 4;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="debug_8h.html#a12e37ff4f4a7ffb42c01349bf3bd8d5b">   27</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="debug_8h.html#a12e37ff4f4a7ffb42c01349bf3bd8d5b">MostraMatrizCoeficientes</a>(<span class="keywordtype">double</span> **coeficientes, <span class="keywordtype">int</span> grauPolinomio)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> linha = 0; linha &lt;= grauPolinomio; linha++) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> coluna = 0; coluna &lt;= grauPolinomio; coluna++) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            cout &lt;&lt; coeficientes[linha][coluna] &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        cout &lt;&lt; endl;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    cout &lt;&lt; endl;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="debug_8h.html#a5c51bfc3af040200ef1923bd27c16fd6">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="debug_8h.html#a5c51bfc3af040200ef1923bd27c16fd6">MostraTermosIndependentes</a>(<span class="keywordtype">double</span> *independentes, <span class="keywordtype">int</span> grauPolinomio)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> linha = 0; linha &lt;= grauPolinomio; linha++) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        cout &lt;&lt; independentes[linha] &lt;&lt; endl;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    cout &lt;&lt; endl;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif // H8OR_DEBUG</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="astruct_s_ponto_html_a1d46e1ca239ec18b158529d32a95aca8"><div class="ttname"><a href="struct_s_ponto.html#a1d46e1ca239ec18b158529d32a95aca8">SPonto::x</a></div><div class="ttdeci">double x</div><div class="ttdef"><b>Definition:</b> <a href="mmq_8h_source.html#l00010">mmq.h:10</a></div></div>
+<div class="ttc" id="adebug_8h_html_a5c51bfc3af040200ef1923bd27c16fd6"><div class="ttname"><a href="debug_8h.html#a5c51bfc3af040200ef1923bd27c16fd6">MostraTermosIndependentes</a></div><div class="ttdeci">void MostraTermosIndependentes(double *independentes, int grauPolinomio)</div><div class="ttdef"><b>Definition:</b> <a href="debug_8h_source.html#l00038">debug.h:38</a></div></div>
+<div class="ttc" id="ammq_8h_html"><div class="ttname"><a href="mmq_8h.html">mmq.h</a></div></div>
+<div class="ttc" id="astruct_s_ponto_html_a4b2f1aa1174234face1590568576b8fc"><div class="ttname"><a href="struct_s_ponto.html#a4b2f1aa1174234face1590568576b8fc">SPonto::y</a></div><div class="ttdeci">double y</div><div class="ttdef"><b>Definition:</b> <a href="mmq_8h_source.html#l00011">mmq.h:11</a></div></div>
+<div class="ttc" id="astruct_s_ponto_html"><div class="ttname"><a href="struct_s_ponto.html">SPonto</a></div><div class="ttdef"><b>Definition:</b> <a href="mmq_8h_source.html#l00008">mmq.h:8</a></div></div>
+<div class="ttc" id="adebug_8h_html_a12e37ff4f4a7ffb42c01349bf3bd8d5b"><div class="ttname"><a href="debug_8h.html#a12e37ff4f4a7ffb42c01349bf3bd8d5b">MostraMatrizCoeficientes</a></div><div class="ttdeci">void MostraMatrizCoeficientes(double **coeficientes, int grauPolinomio)</div><div class="ttdef"><b>Definition:</b> <a href="debug_8h_source.html#l00027">debug.h:27</a></div></div>
+<div class="ttc" id="adebug_8h_html_a0f5016d14d06d3d8e01343009687867f"><div class="ttname"><a href="debug_8h.html#a0f5016d14d06d3d8e01343009687867f">debug_PreencheTabelaPontos</a></div><div class="ttdeci">void debug_PreencheTabelaPontos(SPonto *tabela)</div><div class="ttdef"><b>Definition:</b> <a href="debug_8h_source.html#l00013">debug.h:13</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="debug_8h.html">debug.h</a></li>
+    <li class="footer">Gerado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

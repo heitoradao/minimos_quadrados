@@ -1,0 +1,8 @@
+var searchData=
+[
+  ['gaussseidel_7',['GaussSeidel',['../_gauss_seidel_8cpp.html#a1ddd2a9fbc49517a45ffa895add3e02f',1,'GaussSeidel(double **coeficientes, int ordem, double *incognitas, double *independente, const int numIteracoesMaximas=10, const double erroPermitido=0.0001):&#160;GaussSeidel.cpp'],['../_gauss_seidel_8h.html#ad45a223182e512a92a6340d6fb9ffc57',1,'GaussSeidel(double **coeficientes, int ordem, double *incognitas, double *independente, const int numIteracoesMaximas, const double erroPermitido):&#160;GaussSeidel.cpp']]],
+  ['gaussseidel_2ecpp_8',['GaussSeidel.cpp',['../_gauss_seidel_8cpp.html',1,'']]],
+  ['gaussseidel_2eh_9',['GaussSeidel.h',['../_gauss_seidel_8h.html',1,'']]],
+  ['gi_10',['gi',['../mmq_8cpp.html#ad6668e94ae242288fc7fd165693af988',1,'gi(double x, int i):&#160;mmq.cpp'],['../mmq_8h.html#ad6668e94ae242288fc7fd165693af988',1,'gi(double x, int i):&#160;mmq.cpp']]],
+  ['grau_11',['GRAU',['../debug_8h.html#ad690a2934b16cbe8ecf0195e86c805e7',1,'debug.h']]]
+];
