@@ -12,18 +12,18 @@
  */
 bool CriterioSassenfeld(double **&matriz, const int &ordem)
 {
-	for (int linha = 0; linha < ordem; linha++)
-	{
-		double soma = 0;
-		for (int coluna = 0; coluna < ordem; coluna++)
-		{
-			if (linha != coluna)
-				soma += fabs(matriz[linha][coluna]);
-		}
-		if (soma / fabs(matriz[linha][linha]) >= 1)
-			return false;
-	}
-	return true;
+    for (int linha = 0; linha < ordem; linha++) {
+        double soma = 0;
+        for (int coluna = 0; coluna < ordem; coluna++) {
+            if (linha != coluna) {
+                soma += fabs(matriz[linha][coluna]);
+            }
+        }
+        if (soma / fabs(matriz[linha][linha]) >= 1) {
+            return false;
+        }
+    }
+    return true;
 }
 
 
@@ -37,41 +37,42 @@ bool CriterioSassenfeld(double **&matriz, const int &ordem)
  */
 int CriterioZeros(double **&coeficientes, const int ordem, double *&independentes)
 {
-	int outraLinha;
-	for (int i = 0; i < ordem; i++)
-	{
-		if (!coeficientes[i][i]) // se for falso. Em C, 0 é falso e qualquer coisa diferente é verdadeiro.
-		{
-			cout << "\n\nEsta matriz tem zero na diagonal principal, bem na linha " << i << ".\n"
-			"Digite o numero de outra linha pra substituir com esta:\n"
-			"Mas digite um numero valido!\n"
-			"Os indices vao de 0 a n-1.\n"
-			"Agora digite o numero da outra linha: ";
-			cin >> outraLinha;
-			double *aux = coeficientes[i];
-			coeficientes[i] = coeficientes[outraLinha];
-			coeficientes[outraLinha] = aux;
-			// pronto. já trocou as linhas, agora vai trocar o vetor de termos independentes
-			double aux2 = independentes[i];
-			independentes[i] = independentes[outraLinha];
-			independentes[outraLinha] = aux2;
-			return -1;
-		}
-	}
-	return 0;
+    int outraLinha;
+    for (int i = 0; i < ordem; i++) {
+        if (!coeficientes[i][i]) {
+            cout << "\n\nEsta matriz tem zero na diagonal principal, bem na linha " << i << ".\n"
+                    "Digite o numero de outra linha pra substituir com esta:\n"
+                    "Mas digite um numero valido!\n"
+                    "Os indices vao de 0 a n-1.\n"
+                    "Agora digite o numero da outra linha: ";
+            cin >> outraLinha;
+            double *aux = coeficientes[i];
+            coeficientes[i] = coeficientes[outraLinha];
+            coeficientes[outraLinha] = aux;
+            // pronto. já trocou as linhas, agora vai trocar o vetor de termos independentes
+            double aux2 = independentes[i];
+            independentes[i] = independentes[outraLinha];
+            independentes[outraLinha] = aux2;
+            return -1;
+        }
+    }
+    return 0;
 }
 
 
 /*!
  * Esta função procura o maior valor de um vetor.
+ * \deprecated Usar o algoritmo std::max,da biblioteca padrão
  */
 double Max(const double *vetor, const int &ordem)
 {
-	double max = vetor[0];
-	for (int i = 0; i < ordem; i++)
-		if (max < vetor[i])
-			max = vetor[i];
-	return max;
+    double max = vetor[0];
+    for (int i = 0; i < ordem; i++) {
+        if (max < vetor[i]) {
+            max = vetor[i];
+        }
+    }
+    return max;
 }
 
 
@@ -84,12 +85,13 @@ double Max(const double *vetor, const int &ordem)
  */
 double Erro(double *incognitas, double *incognitasAnterior, const int &ordem)
 {
-	double *diferencas = new double[ordem];
-	for (int i = 0; i < ordem; i++)
-		diferencas[i] = fabs(incognitas[i] - incognitasAnterior[i]);
-	double resultado = Max(diferencas, ordem) / Max(incognitas, ordem);
-	delete diferencas; // tem que liberar a memória.
-	return resultado;
+    double *diferencas = new double[ordem];
+    for (int i = 0; i < ordem; i++) {
+        diferencas[i] = fabs(incognitas[i] - incognitasAnterior[i]);
+    }
+    double resultado = Max(diferencas, ordem) / Max(incognitas, ordem);
+    delete[] diferencas; // tem que liberar a memória.
+    return resultado;
 }
 
 
@@ -102,8 +104,9 @@ double Erro(double *incognitas, double *incognitasAnterior, const int &ordem)
  */
 inline void CopiaVetor(double *vetor1, double *vetor2, const int &ordem)
 {
-	for (int i = 0; i < ordem; i++)
-		vetor2[i] = vetor1[i];
+    for (int i = 0; i < ordem; i++) {
+        vetor2[i] = vetor1[i];
+    }
 }
 
 
@@ -119,25 +122,25 @@ inline void CopiaVetor(double *vetor1, double *vetor2, const int &ordem)
 int GaussSeidel(double **coeficientes, int ordem, double *incognitas, double *independente,
 const int numIteracoesMaximas = 10, const double erroPermitido = 0.0001)
 {
-	int iteracao = 0;
-	double *incognitasIteracaoAnterior = new double[ordem];
+    int iteracao = 0;
+    double *incognitasIteracaoAnterior = new double[ordem];
 
-	//for(iteracao = 0; iteracao < numIteracoesMaximas && VerificaErro(incognitas, incognitasIteracaoAnterior, ordem, erroPermitido); iteracao++)
-	do
-	{
-		CopiaVetor(incognitas, incognitasIteracaoAnterior, ordem);
-    	for (int linha = 0; linha < ordem; linha++)
-    	{
-    		incognitas[linha] = independente[linha];
-    		for (int coluna = 0; coluna < ordem; coluna++)
-    			if (linha != coluna)
-					incognitas[linha] -= (coeficientes[linha][coluna] * incognitas[coluna]);
-    		incognitas[linha] /= coeficientes[linha][linha];
-    	}
-    	iteracao++;
-	} while (iteracao < numIteracoesMaximas && Erro(incognitas, incognitasIteracaoAnterior, ordem) >= erroPermitido);
-	delete incognitasIteracaoAnterior; // liberar memória
-	return iteracao;
+    //for(iteracao = 0; iteracao < numIteracoesMaximas && VerificaErro(incognitas, incognitasIteracaoAnterior, ordem, erroPermitido); iteracao++)
+    do {
+        CopiaVetor(incognitas, incognitasIteracaoAnterior, ordem);
+        for (int linha = 0; linha < ordem; linha++) {
+            incognitas[linha] = independente[linha];
+            for (int coluna = 0; coluna < ordem; coluna++) {
+                if (linha != coluna) {
+                    incognitas[linha] -= (coeficientes[linha][coluna] * incognitas[coluna]);
+                }
+            }
+            incognitas[linha] /= coeficientes[linha][linha];
+        }
+        iteracao++;
+    } while (iteracao < numIteracoesMaximas && Erro(incognitas, incognitasIteracaoAnterior, ordem) >= erroPermitido);
+    delete[] incognitasIteracaoAnterior; // liberar memória
+    return iteracao;
 }
 
 
@@ -149,8 +152,9 @@ const int numIteracoesMaximas = 10, const double erroPermitido = 0.0001)
  */
 void MostraIncognitas(double *vetorIncognitas, const int &ordem)
 {
-	for (int i = 0; i < ordem; i++)
-		cout << "X("<<i<<") = " << vetorIncognitas[i] << endl;
+    for (int i = 0; i < ordem; i++) {
+        cout << "X("<<i<<") = " << vetorIncognitas[i] << endl;
+    }
 }
 
 
@@ -162,15 +166,15 @@ void MostraIncognitas(double *vetorIncognitas, const int &ordem)
  */
 inline void PreencheVetorCoeficientes(double **&coeficientes, const int &ordem)
 {
-	cout << "\n\nDigite os termos independentes.\nVoce pode digitar um por um ou digitar todos eles "
-	"separados por espacos:\nex:\n"
-	"coeficientes[0][0] = 1 2 33.5\n\n";
-	for (int linha = 0; linha < ordem; linha++)
-		for (int coluna = 0; coluna < ordem; coluna++)
-		{
-			cout << "coeficientes[" << linha << "][" << coluna << "] = ";
-			cin >> coeficientes[linha][coluna];
-		}
+    cout << "\n\nDigite os termos independentes.\nVoce pode digitar um por um ou digitar todos eles "
+            "separados por espacos:\nex:\n"
+            "coeficientes[0][0] = 1 2 33.5\n\n";
+    for (int linha = 0; linha < ordem; linha++) {
+        for (int coluna = 0; coluna < ordem; coluna++) {
+            cout << "coeficientes[" << linha << "][" << coluna << "] = ";
+            cin >> coeficientes[linha][coluna];
+        }
+    }
 }
 
 
@@ -181,10 +185,10 @@ inline void PreencheVetorCoeficientes(double **&coeficientes, const int &ordem)
  */
 inline int DimensionaSistemaLinear()
 {
-	cout << "Bom dia professor Torres.\nEntre com a ordem da matriz dos coeficientes: ";
-	int num;
-	cin >> num;
-	return num;
+    cout << "Bom dia professor Torres.\nEntre com a ordem da matriz dos coeficientes: ";
+    int num;
+    cin >> num;
+    return num;
 }
 
 
@@ -196,12 +200,11 @@ inline int DimensionaSistemaLinear()
  */
 inline void PreencheIndependentes(double *&vetorIndependente, const int &ordem)
 {
-	cout << "\n\nDigite agora os termos independentes.\n\n";
-	for (int i = 0; i < ordem; i++)
-	{
-		cout << "independente[" << i << "] = ";
-		cin >> vetorIndependente[i];
-	}
+    cout << "\n\nDigite agora os termos independentes.\n\n";
+    for (int i = 0; i < ordem; i++) {
+        cout << "independente[" << i << "] = ";
+        cin >> vetorIndependente[i];
+    }
 }
 
 
@@ -213,6 +216,7 @@ inline void PreencheIndependentes(double *&vetorIndependente, const int &ordem)
  */
 inline void InicializaZeros(double *&vetor, const int &tamanho)
 {
-	for (int i = 0; i < tamanho; i++)
-		vetor[i] = 0;
+    for (int i = 0; i < tamanho; i++) {
+        vetor[i] = 0;
+    }
 }

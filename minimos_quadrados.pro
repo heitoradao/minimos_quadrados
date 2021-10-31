@@ -4,11 +4,11 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        GaussSeidel.cpp \
         main.cpp \
+        GaussSeidel.cpp \
         mmq.cpp
 
 HEADERS += \
-    GaussSeidel.h \
     debug.h \
+    GaussSeidel.h \
     mmq.h
