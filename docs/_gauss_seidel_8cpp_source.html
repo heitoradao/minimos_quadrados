@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Minimos Quadrados: Código-Fonte de GaussSeidel.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Minimos Quadrados
+   &#160;<span id="projectnumber">v0.5</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('_gauss_seidel_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">GaussSeidel.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_gauss_seidel_8cpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_gauss_seidel_8h.html">GaussSeidel.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="_gauss_seidel_8h.html#af9003f5e432f454d7544da4193242a75">   13</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_gauss_seidel_8cpp.html#af9003f5e432f454d7544da4193242a75">CriterioSassenfeld</a>(<span class="keywordtype">double</span> **&amp;matriz, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;ordem)</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> linha = 0; linha &lt; ordem; linha++) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">double</span> soma = 0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> coluna = 0; coluna &lt; ordem; coluna++) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keywordflow">if</span> (linha != coluna) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                soma += fabs(matriz[linha][coluna]);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">if</span> (soma / fabs(matriz[linha][linha]) &gt;= 1) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="_gauss_seidel_8h.html#a8beee4cc07326cc41806095b63e86afc">   38</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="_gauss_seidel_8cpp.html#a8beee4cc07326cc41806095b63e86afc">CriterioZeros</a>(<span class="keywordtype">double</span> **&amp;coeficientes, <span class="keyword">const</span> <span class="keywordtype">int</span> ordem, <span class="keywordtype">double</span> *&amp;independentes)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> outraLinha;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ordem; i++) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> (!coeficientes[i][i]) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;\n\nEsta matriz tem zero na diagonal principal, bem na linha &quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;.\n&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                    <span class="stringliteral">&quot;Digite o numero de outra linha pra substituir com esta:\n&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    <span class="stringliteral">&quot;Mas digite um numero valido!\n&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                    <span class="stringliteral">&quot;Os indices vao de 0 a n-1.\n&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                    <span class="stringliteral">&quot;Agora digite o numero da outra linha: &quot;</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            cin &gt;&gt; outraLinha;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordtype">double</span> *aux = coeficientes[i];</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            coeficientes[i] = coeficientes[outraLinha];</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            coeficientes[outraLinha] = aux;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="comment">// pronto. já trocou as linhas, agora vai trocar o vetor de termos independentes</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordtype">double</span> aux2 = independentes[i];</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            independentes[i] = independentes[outraLinha];</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            independentes[outraLinha] = aux2;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="_gauss_seidel_8h.html#a7c050a2176e901db0af953a569e396f6">   67</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="_gauss_seidel_8cpp.html#a7c050a2176e901db0af953a569e396f6">Max</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> *vetor, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;ordem)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">double</span> max = vetor[0];</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ordem; i++) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span> (max &lt; vetor[i]) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            max = vetor[i];</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> max;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="_gauss_seidel_8h.html#ac45f78f111b731ffcbe9d52c0290adfa">   86</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="_gauss_seidel_8cpp.html#ac45f78f111b731ffcbe9d52c0290adfa">Erro</a>(<span class="keywordtype">double</span> *incognitas, <span class="keywordtype">double</span> *incognitasAnterior, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;ordem)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">double</span> *diferencas = <span class="keyword">new</span> <span class="keywordtype">double</span>[ordem];</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ordem; i++) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        diferencas[i] = fabs(incognitas[i] - incognitasAnterior[i]);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">double</span> resultado = <a class="code" href="_gauss_seidel_8cpp.html#a7c050a2176e901db0af953a569e396f6">Max</a>(diferencas, ordem) / <a class="code" href="_gauss_seidel_8cpp.html#a7c050a2176e901db0af953a569e396f6">Max</a>(incognitas, ordem);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">delete</span>[] diferencas; <span class="comment">// tem que liberar a memória.</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> resultado;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="_gauss_seidel_8h.html#ac9da430d9a6bc1f92098ef3b99efe445">  105</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="_gauss_seidel_8cpp.html#ac9da430d9a6bc1f92098ef3b99efe445">CopiaVetor</a>(<span class="keywordtype">double</span> *vetor1, <span class="keywordtype">double</span> *vetor2, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;ordem)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;{</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ordem; i++) {</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        vetor2[i] = vetor1[i];</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="_gauss_seidel_8h.html#ad45a223182e512a92a6340d6fb9ffc57">  122</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="_gauss_seidel_8cpp.html#a1ddd2a9fbc49517a45ffa895add3e02f">GaussSeidel</a>(<span class="keywordtype">double</span> **coeficientes, <span class="keywordtype">int</span> ordem, <span class="keywordtype">double</span> *incognitas, <span class="keywordtype">double</span> *independente,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> numIteracoesMaximas = 10, <span class="keyword">const</span> <span class="keywordtype">double</span> erroPermitido = 0.0001)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">int</span> iteracao = 0;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">double</span> *incognitasIteracaoAnterior = <span class="keyword">new</span> <span class="keywordtype">double</span>[ordem];</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">//for(iteracao = 0; iteracao &lt; numIteracoesMaximas &amp;&amp; VerificaErro(incognitas, incognitasIteracaoAnterior, ordem, erroPermitido); iteracao++)</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <a class="code" href="_gauss_seidel_8cpp.html#ac9da430d9a6bc1f92098ef3b99efe445">CopiaVetor</a>(incognitas, incognitasIteracaoAnterior, ordem);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> linha = 0; linha &lt; ordem; linha++) {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            incognitas[linha] = independente[linha];</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> coluna = 0; coluna &lt; ordem; coluna++) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <span class="keywordflow">if</span> (linha != coluna) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                    incognitas[linha] -= (coeficientes[linha][coluna] * incognitas[coluna]);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;            incognitas[linha] /= coeficientes[linha][linha];</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        iteracao++;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    } <span class="keywordflow">while</span> (iteracao &lt; numIteracoesMaximas &amp;&amp; <a class="code" href="_gauss_seidel_8cpp.html#ac45f78f111b731ffcbe9d52c0290adfa">Erro</a>(incognitas, incognitasIteracaoAnterior, ordem) &gt;= erroPermitido);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keyword">delete</span>[] incognitasIteracaoAnterior; <span class="comment">// liberar memória</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordflow">return</span> iteracao;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;}</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="_gauss_seidel_8h.html#a71a2dcfa35b8d3accda054f82dc42e7c">  153</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_gauss_seidel_8cpp.html#a71a2dcfa35b8d3accda054f82dc42e7c">MostraIncognitas</a>(<span class="keywordtype">double</span> *vetorIncognitas, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;ordem)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;{</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ordem; i++) {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;X(&quot;</span>&lt;&lt;i&lt;&lt;<span class="stringliteral">&quot;) = &quot;</span> &lt;&lt; vetorIncognitas[i] &lt;&lt; endl;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="_gauss_seidel_8h.html#a12cdcc862cf42919b52d80db2dc70372">  167</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="_gauss_seidel_8cpp.html#a12cdcc862cf42919b52d80db2dc70372">PreencheVetorCoeficientes</a>(<span class="keywordtype">double</span> **&amp;coeficientes, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;ordem)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;{</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\n\nDigite os termos independentes.\nVoce pode digitar um por um ou digitar todos eles &quot;</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <span class="stringliteral">&quot;separados por espacos:\nex:\n&quot;</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            <span class="stringliteral">&quot;coeficientes[0][0] = 1 2 33.5\n\n&quot;</span>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> linha = 0; linha &lt; ordem; linha++) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> coluna = 0; coluna &lt; ordem; coluna++) {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot;coeficientes[&quot;</span> &lt;&lt; linha &lt;&lt; <span class="stringliteral">&quot;][&quot;</span> &lt;&lt; coluna &lt;&lt; <span class="stringliteral">&quot;] = &quot;</span>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            cin &gt;&gt; coeficientes[linha][coluna];</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="_gauss_seidel_8h.html#aef75200522bd38b83237d4aa491ff0f9">  186</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="_gauss_seidel_8cpp.html#aef75200522bd38b83237d4aa491ff0f9">DimensionaSistemaLinear</a>()</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;{</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Bom dia professor Torres.\nEntre com a ordem da matriz dos coeficientes: &quot;</span>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">int</span> num;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    cin &gt;&gt; num;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">return</span> num;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="_gauss_seidel_8h.html#a2278adfe311788bcb679d71b69bb77ca">  201</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="_gauss_seidel_8cpp.html#a2278adfe311788bcb679d71b69bb77ca">PreencheIndependentes</a>(<span class="keywordtype">double</span> *&amp;vetorIndependente, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;ordem)</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;{</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;\n\nDigite agora os termos independentes.\n\n&quot;</span>;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; ordem; i++) {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;independente[&quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;] = &quot;</span>;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        cin &gt;&gt; vetorIndependente[i];</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno"><a class="line" href="_gauss_seidel_8h.html#af1646134ea9cb652b47621f5b3b98e91">  217</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="_gauss_seidel_8cpp.html#af1646134ea9cb652b47621f5b3b98e91">InicializaZeros</a>(<span class="keywordtype">double</span> *&amp;vetor, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;tamanho)</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;{</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; tamanho; i++) {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        vetor[i] = 0;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="a_gauss_seidel_8cpp_html_ac9da430d9a6bc1f92098ef3b99efe445"><div class="ttname"><a href="_gauss_seidel_8cpp.html#ac9da430d9a6bc1f92098ef3b99efe445">CopiaVetor</a></div><div class="ttdeci">void CopiaVetor(double *vetor1, double *vetor2, const int &amp;ordem)</div><div class="ttdef"><b>Definition:</b> <a href="_gauss_seidel_8cpp_source.html#l00105">GaussSeidel.cpp:105</a></div></div>
+<div class="ttc" id="a_gauss_seidel_8cpp_html_a12cdcc862cf42919b52d80db2dc70372"><div class="ttname"><a href="_gauss_seidel_8cpp.html#a12cdcc862cf42919b52d80db2dc70372">PreencheVetorCoeficientes</a></div><div class="ttdeci">void PreencheVetorCoeficientes(double **&amp;coeficientes, const int &amp;ordem)</div><div class="ttdef"><b>Definition:</b> <a href="_gauss_seidel_8cpp_source.html#l00167">GaussSeidel.cpp:167</a></div></div>
+<div class="ttc" id="a_gauss_seidel_8cpp_html_a1ddd2a9fbc49517a45ffa895add3e02f"><div class="ttname"><a href="_gauss_seidel_8cpp.html#a1ddd2a9fbc49517a45ffa895add3e02f">GaussSeidel</a></div><div class="ttdeci">int GaussSeidel(double **coeficientes, int ordem, double *incognitas, double *independente, const int numIteracoesMaximas=10, const double erroPermitido=0.0001)</div><div class="ttdef"><b>Definition:</b> <a href="_gauss_seidel_8cpp_source.html#l00122">GaussSeidel.cpp:122</a></div></div>
+<div class="ttc" id="a_gauss_seidel_8cpp_html_a71a2dcfa35b8d3accda054f82dc42e7c"><div class="ttname"><a href="_gauss_seidel_8cpp.html#a71a2dcfa35b8d3accda054f82dc42e7c">MostraIncognitas</a></div><div class="ttdeci">void MostraIncognitas(double *vetorIncognitas, const int &amp;ordem)</div><div class="ttdef"><b>Definition:</b> <a href="_gauss_seidel_8cpp_source.html#l00153">GaussSeidel.cpp:153</a></div></div>
+<div class="ttc" id="a_gauss_seidel_8cpp_html_a2278adfe311788bcb679d71b69bb77ca"><div class="ttname"><a href="_gauss_seidel_8cpp.html#a2278adfe311788bcb679d71b69bb77ca">PreencheIndependentes</a></div><div class="ttdeci">void PreencheIndependentes(double *&amp;vetorIndependente, const int &amp;ordem)</div><div class="ttdef"><b>Definition:</b> <a href="_gauss_seidel_8cpp_source.html#l00201">GaussSeidel.cpp:201</a></div></div>
+<div class="ttc" id="a_gauss_seidel_8cpp_html_aef75200522bd38b83237d4aa491ff0f9"><div class="ttname"><a href="_gauss_seidel_8cpp.html#aef75200522bd38b83237d4aa491ff0f9">DimensionaSistemaLinear</a></div><div class="ttdeci">int DimensionaSistemaLinear()</div><div class="ttdef"><b>Definition:</b> <a href="_gauss_seidel_8cpp_source.html#l00186">GaussSeidel.cpp:186</a></div></div>
+<div class="ttc" id="a_gauss_seidel_8h_html"><div class="ttname"><a href="_gauss_seidel_8h.html">GaussSeidel.h</a></div></div>
+<div class="ttc" id="a_gauss_seidel_8cpp_html_af9003f5e432f454d7544da4193242a75"><div class="ttname"><a href="_gauss_seidel_8cpp.html#af9003f5e432f454d7544da4193242a75">CriterioSassenfeld</a></div><div class="ttdeci">bool CriterioSassenfeld(double **&amp;matriz, const int &amp;ordem)</div><div class="ttdef"><b>Definition:</b> <a href="_gauss_seidel_8cpp_source.html#l00013">GaussSeidel.cpp:13</a></div></div>
+<div class="ttc" id="a_gauss_seidel_8cpp_html_a8beee4cc07326cc41806095b63e86afc"><div class="ttname"><a href="_gauss_seidel_8cpp.html#a8beee4cc07326cc41806095b63e86afc">CriterioZeros</a></div><div class="ttdeci">int CriterioZeros(double **&amp;coeficientes, const int ordem, double *&amp;independentes)</div><div class="ttdef"><b>Definition:</b> <a href="_gauss_seidel_8cpp_source.html#l00038">GaussSeidel.cpp:38</a></div></div>
+<div class="ttc" id="a_gauss_seidel_8cpp_html_af1646134ea9cb652b47621f5b3b98e91"><div class="ttname"><a href="_gauss_seidel_8cpp.html#af1646134ea9cb652b47621f5b3b98e91">InicializaZeros</a></div><div class="ttdeci">void InicializaZeros(double *&amp;vetor, const int &amp;tamanho)</div><div class="ttdef"><b>Definition:</b> <a href="_gauss_seidel_8cpp_source.html#l00217">GaussSeidel.cpp:217</a></div></div>
+<div class="ttc" id="a_gauss_seidel_8cpp_html_ac45f78f111b731ffcbe9d52c0290adfa"><div class="ttname"><a href="_gauss_seidel_8cpp.html#ac45f78f111b731ffcbe9d52c0290adfa">Erro</a></div><div class="ttdeci">double Erro(double *incognitas, double *incognitasAnterior, const int &amp;ordem)</div><div class="ttdef"><b>Definition:</b> <a href="_gauss_seidel_8cpp_source.html#l00086">GaussSeidel.cpp:86</a></div></div>
+<div class="ttc" id="a_gauss_seidel_8cpp_html_a7c050a2176e901db0af953a569e396f6"><div class="ttname"><a href="_gauss_seidel_8cpp.html#a7c050a2176e901db0af953a569e396f6">Max</a></div><div class="ttdeci">double Max(const double *vetor, const int &amp;ordem)</div><div class="ttdef"><b>Definition:</b> <a href="_gauss_seidel_8cpp_source.html#l00067">GaussSeidel.cpp:67</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="_gauss_seidel_8cpp.html">GaussSeidel.cpp</a></li>
+    <li class="footer">Gerado por
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>
